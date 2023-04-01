@@ -1,4 +1,4 @@
-package com.ct.eurder;
+package com.ct.eurder.customer;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;

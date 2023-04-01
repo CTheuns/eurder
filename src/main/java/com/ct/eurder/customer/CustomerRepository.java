@@ -1,5 +1,6 @@
-package com.ct.eurder;
+package com.ct.eurder.customer;
 
+import com.ct.eurder.customer.Customer;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;

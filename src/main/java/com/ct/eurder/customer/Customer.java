@@ -1,4 +1,4 @@
-package com.ct.eurder;
+package com.ct.eurder.customer;
 
 import java.util.UUID;
 
