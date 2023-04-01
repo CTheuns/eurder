@@ -2,29 +2,24 @@ package com.ct.eurder;
 
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Repository
 public class CustomerRepository {
 
-    private List<Customer> customers = new ArrayList<>();
+    private final Map<String, Customer> customers = new HashMap<>();
 
     public List<Customer> getAllCustomers() {
         //return customers;
-        return List.copyOf(customers);
+        return List.copyOf(customers.values());
     }
 
     public Customer getCustomerByEmail(String email) {
-        return customers.stream()
-                .filter(customer -> customer.getEmail().equals(email))
-                .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("Customer with id " + email + " not found"));
+        return customers.get(email);
     }
 
     public Customer addCustomer(Customer newCustomer) {
-        customers.add(newCustomer);
+        customers.put(newCustomer.getEmail(), newCustomer);
         return newCustomer;
     }
 }

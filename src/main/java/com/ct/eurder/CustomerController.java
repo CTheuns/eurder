@@ -15,17 +15,17 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
-    @GetMapping("/customer")
+    @GetMapping("/customer/")
     public List<Customer> getAllCustomers() {
         return customerService.getAllCustomers();
     }
 
     @GetMapping("/customer/{email}")
-    public Customer getCustomerByEmail(String email) {
+    public Customer getCustomerByEmail(@PathVariable String email) {
         return customerService.getCustomerByEmail(email);
     }
 
-    @PostMapping(value ="customer/{new}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value ="customer/all", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public Customer addCustomer(@RequestBody Customer newCustomer) {
         return customerService.addCustomer(newCustomer);
     }
