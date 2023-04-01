@@ -35,17 +35,17 @@ public class ItemsRepositery {
         return (items.getStockAmount() >= itemgroup.getOrderAmount());
     }
 
-
-    public void addItemGroup(Itemgroup itemgroup, Orders order){
-        UUID orderId = UUID.randomUUID();
-       Items soldItem = itemsDatabese.get(itemgroup.getItemToOrderId());
-        int supplyAmount = soldItem.getStockAmount();
-        int neededAmount = itemgroup.getOrderAmount();
-        if (isItemInStock(soldItem) && supplyAmount >= neededAmount){
-            order.put(orderId,itemgroup);
-
-        }
-    }
+//
+//    public void addItemGroup(Itemgroup itemgroup){
+//        UUID orderId = UUID.randomUUID();
+//       Items soldItem = itemsDatabese.get(itemgroup.getItemToOrderId());
+//        int supplyAmount = soldItem.getStockAmount();
+//        int neededAmount = itemgroup.getOrderAmount();
+//        if (isItemInStock(soldItem) && supplyAmount >= neededAmount){
+//            order
+//
+//        }
+//    }
 
 
 }
