@@ -2,6 +2,7 @@ package com.ct.eurder.items;
 
 import java.math.BigDecimal;
 import java.util.Objects;
+import java.util.UUID;
 
 public class Items {
 
@@ -9,12 +10,14 @@ public class Items {
     private final String description;
     private final BigDecimal price;
     private int stockAmount;
+    private UUID itemId;
 
     public Items(String itemName, String description, BigDecimal price, int stockAmount) {
         this.itemName = itemName;
         this.description = description;
         this.price = price;
         this.stockAmount = stockAmount;
+        this.itemId = UUID.randomUUID();
     }
 
     public String getItemName() {
@@ -31,6 +34,10 @@ public class Items {
 
     public int getStockAmount() {
         return stockAmount;
+    }
+
+    public UUID getItemId(){
+        return itemId;
     }
 
     @Override
